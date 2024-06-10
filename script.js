@@ -5,6 +5,7 @@ let totalSquares = 0
 const button = document.querySelector("button")
 button.addEventListener("click", createGrid)
 
+const container = document.querySelector("#container")
 
 function getUserInput() {
     tempHorizontal = prompt("horizontal")
@@ -30,5 +31,14 @@ function countSquares() {
 
 function createGrid() {
     countSquares()
-    console.log(totalSquares)
+    
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+    
+    for (let i = 0; i < totalSquares; i++) {
+        const content = document.createElement("div")
+        content.classList.add("content")
+        container.appendChild(content)
+    }
 }
