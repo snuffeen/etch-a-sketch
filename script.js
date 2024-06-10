@@ -7,8 +7,19 @@ button.addEventListener("click", createGrid)
 
 
 function getUserInput() {
-    inputHorizontalSquares = prompt("horizontal")
-    inputVerticalSquares = prompt("vertical")
+    tempHorizontal = prompt("horizontal")
+    tempVertical = prompt("vertical")
+    if (isNaN(tempHorizontal)
+        || tempHorizontal >= 100
+        || isNaN(tempVertical)
+        || tempVertical >= 100
+    ) {
+        getUserInput()
+    }
+    else {
+        inputHorizontalSquares = tempHorizontal
+        inputVerticalSquares = tempVertical
+    }
 }
 
 function countSquares() {
@@ -19,5 +30,5 @@ function countSquares() {
 
 function createGrid() {
     countSquares()
-    
+    console.log(totalSquares)
 }
