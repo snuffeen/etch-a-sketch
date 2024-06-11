@@ -1,11 +1,24 @@
-* {
-    outline: 2px solid red;
-}
 
-.container {
+#container {
     display: flex;
+    width: 960px;
+    height: 960px;
+    margin: 0 auto;
+    outline: 1px solid black;
 }
 
-.container div {
-    flex: 1;
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+
+.vertical {
+    flex-basis: 100%;
+    background-color: black;
+}
+
+.vertical:hover {
+    background-color: red;
 }
